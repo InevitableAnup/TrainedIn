@@ -16,9 +16,9 @@ import { FontAwesome,Ionicons } from '@expo/vector-icons';
 
 import { Col, Row, Grid } from "react-native-easy-grid";
 
-export default class ProfileView extends React.Component {
+export default class EditProfile extends React.Component {
   static navigationOptions = {
-    title: "Profile View"
+    title: "Edit Profile"
   };
 
   render() {

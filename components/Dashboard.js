@@ -30,7 +30,8 @@ import ContactsView from "./Contacts/ContactsView";
 
 const App = StackNavigator({
   TrainingView: { screen: TrainingView },
-  ProfileView: { screen: ProfileView }
+  ProfileView: { screen: ProfileView },
+  ContactsView: { screen: ContactsView },
 });
 
 export default class Dashboard extends React.Component {
@@ -72,12 +73,7 @@ export default class Dashboard extends React.Component {
                   info
                   primary
                   style={{ marginTop: "5%" }}
-                  onPress={() =>
-                    Toast.show({
-                      text: "View Profile!",
-                      position: "bottom",
-                      buttonText: "Okay"
-                    })}
+                  onPress={() => navigate("ProfileView")}
                 >
                   <Text> Profile </Text>
                 </Button>
@@ -88,12 +84,7 @@ export default class Dashboard extends React.Component {
                   info
                   primary
                   style={{ marginTop: "5%" }}
-                  onPress={() =>
-                    Toast.show({
-                      text: "View Contacts!",
-                      position: "bottom",
-                      buttonText: "Okay"
-                    })}
+                  onPress={() => navigate("ContactsView")}
                 >
                   <Text> Contacts </Text>
                 </Button>

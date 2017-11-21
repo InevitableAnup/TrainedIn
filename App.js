@@ -23,29 +23,58 @@ import {
   Col
 } from "native-base";
 
-import { StackNavigator } from 'react-navigation';
+import { StackNavigator, DrawerNavigator } from "react-navigation";
 
 import Dashboard from "./components/Dashboard";
 import TrainingView from "./components/Training/TrainingView";
 import ProfileView from "./components/Profile/ProfileView";
 import ContactsView from "./components/Contacts/ContactsView";
 
+function DashboardView({ navigation }) {
+  return <Dashboard />;
+}
+
+function ViewTraining({ navigation }) {
+  return <TrainingView />;
+}
+
+function ViewProfile({ navigation }) {
+  return <ProfileView />;
+}
+
+function ViewContacts({ navigation }) {
+  return <ContactsView />;
+}
 
 const Stack = StackNavigator({
-  Dashboard:{
-    screen: Dashboard,
+  Dashboard: {
+    screen: Dashboard
   },
-  TrainingView:{
-    screen: TrainingView,
+  TrainingView: {
+    screen: TrainingView
   },
-  ProfileView:{
-    screen: ProfileView,
+  ProfileView: {
+    screen: ProfileView
   },
-  ContactsView:{
-    screen: ContactsView,
+  ContactsView: {
+    screen: ContactsView
   }
-})
+});
 
+const Drawer = DrawerNavigator({
+  Dashboard: {
+    screen: Dashboard
+  },
+  TrainingView: {
+    screen: TrainingView
+  },
+  ProfileView: {
+    screen: ProfileView
+  },
+  ContactsView: {
+    screen: ContactsView
+  }
+});
 
 export default class App extends React.Component {
   constructor(props) {
@@ -65,14 +94,14 @@ export default class App extends React.Component {
     this.setState({ isReady: true });
   }
   render() {
-      if (!this.state.isReady) {
+    if (!this.state.isReady) {
       return <Expo.AppLoading />;
     }
     return (
       <Root>
-        <Stack/>
+      
+        <Drawer/>
       </Root>
     );
   }
 }
-

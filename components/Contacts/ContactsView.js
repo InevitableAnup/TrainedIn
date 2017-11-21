@@ -1,16 +1,50 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { StyleSheet, Text, View } from "react-native";
+import {
+  Container,
+  Header,
+  Title,
+  Content,
+  Footer,
+  FooterTab,
+  Left,
+  Right,
+  Body,
+  Icon,
+  H1,
+  Input,
+  Item,
+  Form,
+  Toast,
+  Button,
+  Root
+} from "native-base";
 
 export default class ContactsView extends React.Component {
-    static navigationOptions = {
-        title: "Contacts View"
-      };
+  static navigationOptions = {
+    title: "Contacts View"
+  };
   render() {
     return (
-      <View style={styles.container}>
-        <Text>ContactsView</Text>
-        
-      </View>
+      <Container>
+        <Header>
+          <Left>
+            <Button
+              transparent
+              onPress={() => this.props.navigation.navigate("DrawerOpen")}
+            >
+              <Icon name="menu" />
+            </Button>
+          </Left>
+          <Body>
+            <Title>Contacts</Title>
+          </Body>
+          <Right />
+        </Header>
+        <Content>
+          <Text>ContactsView</Text>
+        </Content>
+      </Container>
     );
   }
 }
@@ -18,8 +52,8 @@ export default class ContactsView extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center"
+  }
 });

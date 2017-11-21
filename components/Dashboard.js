@@ -31,7 +31,7 @@ import ContactsView from "./Contacts/ContactsView";
 const App = StackNavigator({
   TrainingView: { screen: TrainingView },
   ProfileView: { screen: ProfileView },
-  ContactsView: { screen: ContactsView },
+  ContactsView: { screen: ContactsView }
 });
 
 export default class Dashboard extends React.Component {
@@ -48,6 +48,20 @@ export default class Dashboard extends React.Component {
     const { navigate } = this.props.navigation;
     return (
       <Container>
+        <Header>
+          <Left>
+            <Button
+              transparent
+              onPress={() => this.props.navigation.navigate("DrawerOpen")}
+            >
+              <Icon name="menu" />
+            </Button>
+          </Left>
+          <Body>
+            <Title>Dashboard</Title>
+          </Body>
+          <Right />
+        </Header>
         <Content>
           <H1 style={{ marginTop: "5%", marginLeft: "5%", marginRight: "5%" }}>
             Hi Anup!

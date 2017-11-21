@@ -1,5 +1,6 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
+import * as firebase from "firebase";
 import {
   Container,
   Header,
@@ -22,11 +23,15 @@ import {
   Col
 } from "native-base";
 
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
+
+
+
 export default class TrainingView extends React.Component {
   render() {
     return (
       <Container>
-        <Header>
+        <Header style={{ marginTop: "5%" }}>
           <Left>
             <Button
               transparent
@@ -41,18 +46,11 @@ export default class TrainingView extends React.Component {
           <Right />
         </Header>
         <Content>
-          <Text>Training View</Text>
+          <KeyboardAwareScrollView>
+            <Text>Training View</Text>
+          </KeyboardAwareScrollView>
         </Content>
       </Container>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center"
-  }
-});

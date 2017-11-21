@@ -27,11 +27,13 @@ import { StackNavigator } from "react-navigation";
 import TrainingView from "./Training/TrainingView";
 import ProfileView from "./Profile/ProfileView";
 import ContactsView from "./Contacts/ContactsView";
+import EditProfile from "./EditProfile/EditProfile";
 
 const App = StackNavigator({
   TrainingView: { screen: TrainingView },
   ProfileView: { screen: ProfileView },
-  ContactsView: { screen: ContactsView }
+  ContactsView: { screen: ContactsView },
+  EditProfile: { screen: EditProfile }
 });
 
 export default class Dashboard extends React.Component {
@@ -48,7 +50,7 @@ export default class Dashboard extends React.Component {
     const { navigate } = this.props.navigation;
     return (
       <Container>
-        <Header>
+        <Header style={{ marginTop: "5%" }}>
           <Left>
             <Button
               transparent
@@ -64,7 +66,7 @@ export default class Dashboard extends React.Component {
         </Header>
         <Content>
           <H1 style={{ marginTop: "5%", marginLeft: "5%", marginRight: "5%" }}>
-            Hi Anup!
+            Hi Ji chang Ji Chong!
           </H1>
 
           <Content contentContainerStyle={{ flex: 1 }} style={{ padding: 10 }}>
@@ -102,6 +104,8 @@ export default class Dashboard extends React.Component {
                 >
                   <Text> Contacts </Text>
                 </Button>
+
+                
               </Col>
             </Grid>
           </Content>

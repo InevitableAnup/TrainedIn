@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, View, ScrollView } from "react-native";
+import { StyleSheet, Text, View, ScrollView,TextInput } from "react-native";
 import {
   Container,
   Header,
@@ -21,233 +21,126 @@ import {
   Thumbnail
 } from "native-base";
 
-
 import { FontAwesome, Ionicons } from "@expo/vector-icons";
-
+import {
+  Card,
+  Avatar,
+  FormLabel,
+  FormInput,
+  Divider
+} from "react-native-elements";
 import { Col, Row, Grid } from "react-native-easy-grid";
 
 export default class ProfileView extends React.Component {
   render() {
+    const { navigate } = this.props.navigation;
     return (
-      <ScrollView>
-        <Container>
-          <Header>
-            <Left>
-              <Button
-                transparent
-                onPress={() => this.props.navigation.navigate("DrawerOpen")}
-              >
-                <Icon name="menu" />
-              </Button>
-            </Left>
-            <Body>
-              <Title>Profile</Title>
-            </Body>
-            <Right />
-          </Header>
-          <Content contentContainerStyle={{ flex: 1 }} style={{ padding: 10 }}>
+      <Container>
+        <Header style={{ marginTop: "5%" }}>
+          <Left>
+            <Button
+              transparent
+              onPress={() => this.props.navigation.navigate("DrawerOpen")}
+            >
+              <Icon name="menu" />
+            </Button>
+          </Left>
+          <Body>
+            <Title>Profile</Title>
+          </Body>
+          <Right />
+        </Header>
+        <Content style={{ marginBottom:"5%" }}>
+          <Card >
             <Grid>
-              <Col />
               <Col>
-                <Thumbnail
-                  large
+                <Avatar
+                  xlarge
+                  rounded
                   source={{
                     uri:
-                      "https://avatars3.githubusercontent.com/u/13977912?s=400&u=1847b338a8e3d973f7bee7b0ee77248a53525b3e&v=4"
+                      "https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg"
                   }}
+                  onPress={() => console.log("Works!")}
+                  activeOpacity={0.7}
                 />
               </Col>
               <Col>
-                <FontAwesome name="edit" size={30} />
-              </Col>
-            </Grid>
-          </Content>
-          <Content contentContainerStyle={{ flex: 1 }} style={{ padding: 10 }}>
-            <Grid>
-              <Col>
-                <Text>Full Name: </Text>
-              </Col>
-              <Col>
-                <Text>Anup Borde</Text>
+                <FontAwesome name="edit" size={30}  onPress={() => navigate("EditProfile")} />
               </Col>
             </Grid>
 
             <Grid>
               <Col>
-                <Text>Mobile No: </Text>
+                <FormLabel>Name</FormLabel>
               </Col>
               <Col>
-                <Text>8600931386</Text>
+                <FormLabel>Ji Chang Ji Chong</FormLabel>
               </Col>
             </Grid>
 
             <Grid>
               <Col>
-                <Text>Email : </Text>
+                <FormLabel>Mobile</FormLabel>
               </Col>
               <Col>
-                <Text>borde.anup@gmail.com</Text>
-              </Col>
-            </Grid>
-
-            <View
-              style={{
-                borderBottomColor: "black",
-                borderBottomWidth: 1
-              }}
-            />
-          </Content>
-          <Content contentContainerStyle={{ flex: 1 }} style={{ padding: 10 }}>
-            <Text>Address</Text>
-            <Grid>
-              <Col>
-                <Text>Line1</Text>
-              </Col>
-              <Col>
-                <Text>74 Rasta Peth</Text>
+                <FormLabel>8600832932</FormLabel>
               </Col>
             </Grid>
 
             <Grid>
               <Col>
-                <Text>Line2</Text>
+                <FormLabel>Email</FormLabel>
               </Col>
-
               <Col>
-                <Text>opp. K.E.M. Hospital</Text>
+                <FormLabel>borde.anup@gmail.com</FormLabel>
               </Col>
             </Grid>
 
+            <Divider style={{ backgroundColor: "blue", marginTop: "5%" }} />
+
+            <FormLabel>Address</FormLabel>
+
+            <FormLabel>Madhu Asha, 2nd Floor</FormLabel>
+            <FormLabel>Axis Bank Lane</FormLabel>
+            <FormLabel>S.B.Road</FormLabel>
+            <FormLabel>Pune</FormLabel>
+            <FormLabel>Maharashtra</FormLabel>
+            <FormLabel>India</FormLabel>
+            <FormLabel>411011</FormLabel>
+            <Divider style={{ backgroundColor: "blue", marginTop: "5%" }} />
             <Grid>
               <Col>
-                <Text>Area</Text>
+                <FormLabel>Training Tags</FormLabel>
               </Col>
-
               <Col>
-                <Text>Rasta Peth</Text>
+                <Icon name="add" style={{ marginTop: "5%" }} />
               </Col>
             </Grid>
-          </Content>
-          <Content contentContainerStyle={{ flex: 1 }} style={{ padding: 10 }}>
+            <TextInput multiline style={{ height: 100, backgroundColor: '#ccc' }} />
+
+            <Divider style={{ backgroundColor: 'blue', marginTop: "5%" }} />
+
+            <FormLabel>Account</FormLabel>
+            <FormLabel>Change Password</FormLabel>
+            <Divider style={{ backgroundColor: 'blue', marginTop: "5%" }} />
+
+            <FormLabel>Subscription</FormLabel>
+            <FormLabel>Free Tier</FormLabel>
+
+            
             <Grid>
-              <Col>
-                <Text>City</Text>
-              </Col>
-
-              <Col>
-                <Text>Pune</Text>
-              </Col>
+            <Col><FormLabel>Valid upto : </FormLabel></Col>
+            <Col><FormLabel>01/01/2018</FormLabel></Col>
             </Grid>
 
-            <Grid>
-              <Col>
-                <Text>Region/State</Text>
-              </Col>
-
-              <Col>
-                <Text>Maharashtra</Text>
-              </Col>
-            </Grid>
-
-            <Grid>
-              <Col>
-                <Text>Country</Text>
-              </Col>
-
-              <Col>
-                <Text>India</Text>
-              </Col>
-            </Grid>
-
-            <Grid>
-              <Col>
-                <Text>Pin</Text>
-              </Col>
-
-              <Col>
-                <Text>411028</Text>
-              </Col>
-            </Grid>
-          </Content>
-          <Content contentContainerStyle={{ flex: 1 }} style={{ padding: 10 }}>
-            <View
-              style={{
-                borderBottomColor: "black",
-                borderBottomWidth: 1
-              }}
-            />
-
-            <Grid>
-              <Col>
-                <Text>Training Tags</Text>
-              </Col>
-              <Col>
-                <Icon name="add" />
-              </Col>
-            </Grid>
-
-            <View
-              style={{
-                borderBottomColor: "black",
-                borderBottomWidth: 1
-              }}
-            />
-          </Content>
-          <Content contentContainerStyle={{ flex: 1 }} style={{ padding: 10 }}>
-            <Text>Account</Text>
-            <Text>Change Password</Text>
-
-            <View
-              style={{
-                borderBottomColor: "black",
-                borderBottomWidth: 1
-              }}
-            />
-          </Content>
-          <Content contentContainerStyle={{ flex: 1 }} style={{ padding: 10 }}>
-            <Text>Subcription</Text>
-            <Text>Free Tier</Text>
-            <Text>Valid Upto : 01/12/2018</Text>
-          </Content>
-          <Content contentContainerStyle={{ flex: 1 }} style={{ padding: 10 }}>
-            <Button primary>
-              <Text>Activate License</Text>
+            <Button>
+            <Text style={{ color:"white" }}>    Activiate License   </Text>
             </Button>
-          </Content>
 
-          <Container />
-        </Container>
-      </ScrollView>
+          </Card>
+        </Content>
+      </Container>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center"
-  },
-  textContainer: {
-    flexDirection: "row",
-    height: 30,
-    backgroundColor: "green"
-  },
-  leftContainer: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "red"
-  },
-  rightContainer: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "flex-end",
-    backgroundColor: "blue"
-  },
-  rowLabelText: {
-    color: "#0B1219",
-    fontSize: 16.0
-  }
-});

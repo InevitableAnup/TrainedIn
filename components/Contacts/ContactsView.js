@@ -27,7 +27,7 @@ export default class ContactsView extends React.Component {
   render() {
     return (
       <Container>
-        <Header>
+        <Header style={{ marginTop: "5%" }}>
           <Left>
             <Button
               transparent
@@ -48,12 +48,3 @@ export default class ContactsView extends React.Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center"
-  }
-});

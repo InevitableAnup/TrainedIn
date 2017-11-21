@@ -29,6 +29,7 @@ import Dashboard from "./components/Dashboard";
 import TrainingView from "./components/Training/TrainingView";
 import ProfileView from "./components/Profile/ProfileView";
 import ContactsView from "./components/Contacts/ContactsView";
+import EditProfile from "./components/EditProfile/EditProfile";
 
 function DashboardView({ navigation }) {
   return <Dashboard />;
@@ -46,6 +47,8 @@ function ViewContacts({ navigation }) {
   return <ContactsView />;
 }
 
+
+
 const Stack = StackNavigator({
   Dashboard: {
     screen: Dashboard
@@ -58,6 +61,9 @@ const Stack = StackNavigator({
   },
   ContactsView: {
     screen: ContactsView
+  },
+  EditProfile:{
+    screen: EditProfile
   }
 });
 
@@ -73,6 +79,9 @@ const Drawer = DrawerNavigator({
   },
   ContactsView: {
     screen: ContactsView
+  },
+  EditProfile:{
+    screen: EditProfile
   }
 });
 

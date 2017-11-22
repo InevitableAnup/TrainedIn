@@ -18,9 +18,7 @@ import {
   Form,
   Toast,
   Button,
-  Root,
-  Grid,
-  Col
+  Root
 } from "native-base";
 
 import { StackNavigator, DrawerNavigator } from "react-navigation";
@@ -30,24 +28,7 @@ import TrainingView from "./components/Training/TrainingView";
 import ProfileView from "./components/Profile/ProfileView";
 import ContactsView from "./components/Contacts/ContactsView";
 import EditProfile from "./components/EditProfile/EditProfile";
-
-function DashboardView({ navigation }) {
-  return <Dashboard />;
-}
-
-function ViewTraining({ navigation }) {
-  return <TrainingView />;
-}
-
-function ViewProfile({ navigation }) {
-  return <ProfileView />;
-}
-
-function ViewContacts({ navigation }) {
-  return <ContactsView />;
-}
-
-
+import Company from "./components/Company/Company";
 
 const Stack = StackNavigator({
   Dashboard: {
@@ -82,6 +63,9 @@ const Drawer = DrawerNavigator({
   },
   EditProfile:{
     screen: EditProfile
+  },
+  Company:{
+    screen: Company
   }
 });
 

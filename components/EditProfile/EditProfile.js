@@ -27,7 +27,7 @@ import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view
 export default class EditProfile extends React.Component {
   render() {
     return (
-      <KeyboardAwareScrollView>
+      <KeyboardAwareScrollView behavior='padding'>
         <Container>
           <Header style={{ marginTop: "5%" }}>
             <Left>
@@ -84,6 +84,8 @@ export default class EditProfile extends React.Component {
               <FormInput />
               <FormLabel>Training Tags</FormLabel>
               <FormInput />
+
+              <Button block primary ><Text style={{ color:'white' }}>Save</Text></Button>
             </Card>
           </Content>
         </Container>

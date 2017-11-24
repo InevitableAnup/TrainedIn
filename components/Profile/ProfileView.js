@@ -66,7 +66,7 @@ export default class ProfileView extends React.Component {
                 />
               </Col>
               <Col>
-                <FontAwesome name="edit" size={30}  onPress={() => navigate("EditProfile")} />
+                <FontAwesome name="edit" size={30}  onPress={() => navigate("EditProfile",{ name: 'Anup'})} />
               </Col>
             </Grid>
 

@@ -62,6 +62,7 @@ export default class EditProfile extends React.Component {
                 <Col />
               </Grid>
 
+              <Text>{ this.props.navigation.state.params.name }</Text>
               <FormLabel>Name</FormLabel>
               <FormInput />
               <FormLabel>Mobile</FormLabel>
